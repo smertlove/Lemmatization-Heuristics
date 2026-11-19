@@ -7,7 +7,11 @@ authors = [
     { name = "Kirill Soloshenko", email = "k.soloshenko1@mts.ai" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "attrs>=26.1.0",
+    "conllu>=6.1.1",
+    "pandas>=3.1.1",
+]
 
 [project.scripts]
 lemmatization-heuristics = "lemmatization_heuristics:main"
