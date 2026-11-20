@@ -1,5 +1,8 @@
 from argparse import ArgumentParser, BooleanOptionalAction
 from pathlib import Path
+import json
+from src.structs import WordForm, LemmatizeRule
+
 
 def main():
     parser = ArgumentParser()
