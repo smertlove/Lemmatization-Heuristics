@@ -13,26 +13,3 @@ class LemmatizeRule(object):
 
     def to_dict(self):
         return attr.asdict(self)
-
-
-@attr.s(frozen=True)
-class WordForm(object):
-    form = attr.ib(default=None)
-    lemma=attr.ib(default=None)
-    pos=attr.ib(default=None)
-    feats=attr.ib(default=None)
-
-    def to_dict(self):
-        return attr.asdict(self)
-
-    @classmethod
-    def from_df_row(cls, df_row):
-        def clean(val):
-            return None if pd.isna(val) else val
-
-        return cls(
-            form=clean(df_row["form"]),
-            lemma=clean(df_row["lemma"]),
-            pos=clean(df_row["pos"]),
-            feats=clean(df_row["feats"]),
-        )
